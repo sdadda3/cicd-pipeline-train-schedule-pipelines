@@ -4,7 +4,8 @@ pipeline {
       stage (build) {
         steps {
           echo 'Running build automation'
-          echo "the current directory is:" sh 'pwd'
+          sh "echo The current directory is: pwd" 
+          //sh 'pwd'
           sh './gradlew build --no-daemon'
           archiveArtifacts artifacts: 'dist/trainSchedule.zip'
        }
